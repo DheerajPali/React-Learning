@@ -9,6 +9,11 @@ function App() {
   const addValue = () =>{
     console.log('Value Added', Math.random())
     setCounter(counter+1)
+    // setCounter((count)=>count+1);
+    // setCounter((count)=>count+1);
+    // setCounter(count=>count+1);
+    // setCounter(count=>count+1);
+    // setCounter(count=>count+1);
   }
   const removeValue = () =>{
     console.log('value decreases', Math.random())
