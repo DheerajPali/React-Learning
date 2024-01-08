@@ -14,10 +14,10 @@ function InputBox({
     const amounInputId = useId()
 
     return(
-        <div className={` bg-white p-3 rounded-lg text-sm flex ${className}`}>
+        <div className={` bg-black p-3 rounded-lg text-sm flex ${className}`}>
             <div className='w-1/2'>
                 <label htmlFor={amounInputId}
-                className='text-black/40 mb-2 inline-block'>
+                className='text-white/40 mb-2 inline-block'>
                     {label}
                 </label>
                 <input
@@ -33,7 +33,7 @@ function InputBox({
                 />
             </div>
             <div className='w-1/2 flex flex-wrap justify-end text-right'>
-                <p className='text-black/40 mb-2 w-full'>
+                <p className='text-white/40 mb-2 w-full'>
                 Currency Type </p>
                 <select
                     className='rounded-lg px-1 py-1 cursor-pointer outline-none'
