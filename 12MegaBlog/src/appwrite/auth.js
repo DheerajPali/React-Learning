@@ -34,7 +34,7 @@ export class AuthService {
 
 
     // Creating async method , which will always take same parameter ,and you can change your backend resource anytime without facing any issue. 
-    async createLogin({email,password}){
+    async login({email,password}){
 
         // always use try catch for better error handling, core js
         try {

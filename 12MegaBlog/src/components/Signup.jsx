@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import authService from "../appwrite/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Input, Logo } from "./index";
-import { UseDispatch, useDispatch } from "react-redux";
+import {  useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { login as authLogin, login } from "../store/authSlice";
 
@@ -24,6 +24,7 @@ function Signup() {
         } 
       }
     } catch (error) {
+      console.log(error.message)
       setError(error.message)
     }
   };
@@ -71,7 +72,7 @@ function Signup() {
                 required:true,
                 validate:{
                   matchPattern: (value)=>{
-                    /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/igm.test(v)
+                    /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/igm.test(value)
                                       || "Email address must be a valid address"  
                   }
                 }

@@ -19,6 +19,7 @@ function Login() {
       const session = await authService.login(data);
       if (session) {
         const userData = await authService.getCurrentUser();
+        console.log(userData)
         if (userData) {
           dispatch(authLogin(userData));
           navigate("/");
@@ -54,10 +55,10 @@ function Login() {
           </Link>
         </p>
         {error && <p className="text-red-600 mt-8 text-center"> {error} </p>}
-        /*here we're using login method on submit.
-        HandleSubmit is an event or you can say keyword 
-        which takes the name of method which you want to execute on submit.
-        Always name of method apart from handleSubmit like in this case we've taken 'login'*/
+            {/* {here we're using login method on submit.
+            HandleSubmit is an event or you can say keyword 
+            which takes the name of method which you want to execute on submit.
+            Always name of method apart from handleSubmit like in this case we've taken 'login'} */}
         <form onSubmit={handleSubmit(login)}
         className="mt-8">
             <div className="space-y-5">
@@ -69,7 +70,7 @@ function Login() {
                         required: true,
                         validate: {
                             matchPattern: (value) => {
-                                /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/igm.test(v)
+                                /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/igm.test(value)
                                     || "Email address must be a valid address"                               
                             }
                         }
